@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+rofi \
+	-show combi \
+	-combi-modi "window,drun" \
+	-modi run,drun,ssh \
+	-scroll-method 0 \
+	-drun-match-fields all \
+	-drun-display-format "{name}" \
+	-window-format "{c} {w} {t}" \
+	-no-drun-show-actions \
+	-terminal alacritty \
+	-icon-theme "Tela-circle-purple-dark" \
+	-theme "$HOME"/.config/rofi/config/launcher.rasi
