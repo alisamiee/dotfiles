@@ -288,8 +288,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Removes the tiltle bar of each window.
 default_border pixel 2
 # A gap around every window.
-gaps inner 10
-gaps top 35
+gaps inner 5
+gaps top 40
 
 # ---------------------------------------------------------------------------- #
 # exec_always --no-startup-id "setxkbmap -model pc104 -layout us,ir -option 'grp:alt_shift_toggle'"
@@ -298,7 +298,7 @@ exec_always --no-startup-id ~/.config/scripts/kb_layout.sh
 # Start picom
 exec --no-startup-id picom -b
 # Set background
-exec --no-startup-id feh --no-fehbg --bg-fill ~/dotfiles/wallpapers/flatppuccin_4k_macchiato.png
+exec --no-startup-id feh --no-fehbg --bg-fill ~/Pictures/wallpapers/rainbow-cat.png
 # notification manager
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 # polkit for authentication dialogues 
