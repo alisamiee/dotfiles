@@ -298,7 +298,7 @@ exec_always --no-startup-id ~/.config/scripts/kb_layout.sh
 # Start picom
 exec --no-startup-id picom -b
 # Set background
-exec --no-startup-id feh --no-fehbg --bg-fill ~/Pictures/wallpapers/rainbow-cat.png
+exec --no-startup-id feh --no-fehbg --bg-fill ~/dotfiles/wallpaper/rainbow-cat.png
 # notification manager
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 # polkit for authentication dialogues 
