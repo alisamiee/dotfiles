@@ -6,10 +6,10 @@
 # HISTSIZE=10000
 # SAVEHIST=10000
 
-# sources
-source "$HOME/.config/zsh/aliases.zsh"
-source "$HOME/.config/zsh/plugins/highlighting-colors.zsh"
-# source "$HOME/.config/zsh/plugins/prompt.zsh"
+# personal scripts
+plug "$HOME/.config/zsh/aliases.zsh"
+plug "$HOME/.config/zsh/plugins/highlighting-colors.zsh"
+# plug "$HOME/.config/zsh/plugins/prompt.zsh"
 
 # plugins
 plug "zsh-users/zsh-autosuggestions"
