@@ -1,4 +1,5 @@
 #!/bin/sh
+alias sudo="sudo "
 alias please="sudo "
 alias update="yay -Syyu"
 alias vim="nvim"
