@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 rofi \
 	-show combi \
-	-combi-modi "window,drun" \
+	-combi-modi "drun" \
 	-modi run,drun,ssh \
 	-scroll-method 0 \
 	-drun-match-fields all \
