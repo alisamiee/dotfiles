@@ -1,15 +1,16 @@
-local present, bufferline = pcall(require, "bufferline")
+local present, barbar = pcall(require, "barbar")
 if not present then
 	vim.notify("barbar not found.")
 	return
 end
 
-bufferline.setup({
+barbar.setup({
 	animation = true,
 	auto_hide = false,
 	tabpages = true,
 	closable = true,
 	clickable = true,
+    focus_on_close = "left",
 	-- diagnostics = {
 	--     -- you can use a list
 	--     { enabled = true, icon = "ﬀ" }, -- ERROR
@@ -26,17 +27,21 @@ bufferline.setup({
 	highlight_alternate = false,
 	highlight_inactive_file_icons = false,
 	highlight_visible = true,
-	icons = true,
-	icon_custom_colors = false,
-	-- Configure icons on the bufferline.
-	icon_separator_active = "▎",
-	icon_separator_inactive = "▎",
-	icon_close_tab = "",
-	icon_close_tab_modified = "●",
-	icon_pinned = "車",
+    icons = {
+        button = "",
+        filetype = {
+            enabled = true;
+        },
+        separator = {left = "▎", right = ""},
+        pinned = {button = "車", filename = true, separator = {right = ""}},
+        inactive = {button = "×", separator = {left = ""}},
+    },
 	maximum_padding = 5,
 	minimum_padding = 1,
 	maximum_length = 30,
+    sidebar_filetypes = {
+        NvimTree = {text = "File Explorer"},
+    },
 	semantic_letters = true,
 	letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
 	-- Sets the name of unnamed buffers. By default format is "[Buffer X]"
