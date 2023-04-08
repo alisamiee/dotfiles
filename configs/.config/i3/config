@@ -302,7 +302,7 @@ exec --no-startup-id feh --no-fehbg --bg-fill ~/dotfiles/wallpaper/rainbow-cat.p
 # notification manager
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 # Rounded borders
-exec --no-startup-id $HOME/.config/scripts/xborder/xborders --border-width 2 --border-rgba cba6f7FF &
+exec --no-startup-id xborders --disable-version-warning --border-width 2 --border-rgba cba6f7FF &
 # polkit for authentication dialogues 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # use gnome tweaks theme
