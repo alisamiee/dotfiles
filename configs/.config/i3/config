@@ -280,7 +280,28 @@ bindsym $mod+r mode "resize"
 #                                  Bar config                                  #
 # ---------------------------------------------------------------------------- #
 # Launch polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+bar {
+    status_command    i3status --config ~/.config/i3/i3status.conf
+    position          top
+    mode              hide
+    workspace_buttons yes
+    tray_output       primary
+
+    font pango: Hack Nerd Font Bold 10
+
+    colors {
+        background $surface0
+        statusline $text
+
+        focused_workspace  $crust $mauve
+        active_workspace   $text $crust
+        inactive_workspace $text $surface1
+        urgent_workspace   $text $peach
+    }
+}
+
 
 # ---------------------------------------------------------------------------- #
 #                               Gaps and Borders                               #
@@ -288,8 +309,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Removes the tiltle bar of each window.
 default_border pixel 2
 # A gap around every window.
-gaps inner 5
-gaps top 40
+# gaps inner 2
+# gaps top 5
 
 # ---------------------------------------------------------------------------- #
 # exec_always --no-startup-id "setxkbmap -model pc104 -layout us,ir -option 'grp:alt_shift_toggle'"
