@@ -2,7 +2,7 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+keymap("", "<Space>", "<nop>", opts)
 vim.g.mapleader = " "
 
 -- Resize with arrows
@@ -55,8 +55,12 @@ keymap("v", "<leader>p", [["_dP]])
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Paste with ctrl+v
-keymap({ "i", "c", "t" }, "<C-v>", "<C-R>+", opts)
+-- System clipboard in neovide
+if vim.g.neovide then
+    keymap({ "c", "t" }, "<C-S-v>", "<C-R>+", opts)
+    keymap({ "n", "v" }, "<C-S-v>", '"+P', opts)
+    keymap("i" , "<C-S-v>", '<ESC>"+pa', opts)
+end
 
 -- Format buffer
 keymap("n", "<leader>f", vim.lsp.buf.format)

@@ -8,11 +8,11 @@ end
 autopairs.setup({
 	check_ts = true, -- treesitter integration
 	disable_filetype = { "TelescopePrompt" },
-	--   ts_config = {
-	    -- lua = { "string", "source" }, -- it will not add a pair on that treesitter node
-	--     javascript = { "string", "template_string" },
-	--     java = false, -- don't check treesitter on java
-	--   },
+	  -- ts_config = {
+	  --   lua = { "string", "source" }, -- it will not add a pair on that treesitter node
+	  --   javascript = { "string", "template_string" },
+	  --   java = false, -- don't check treesitter on java
+	  -- },
 
 	fast_wrap = {
 		map = "<M-e>",
@@ -22,8 +22,8 @@ autopairs.setup({
 		end_key = "$",
 		keys = "qwertyuiopzxcvbnmasdfghjkl",
 		check_comma = true,
-		highlight = "PmenuSel",
-		highlight_grey = "LineNr",
+		highlight = "Search",
+		highlight_grey = "Comment",
 	},
 })
 
