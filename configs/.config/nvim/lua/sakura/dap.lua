@@ -10,13 +10,31 @@ if not dapui_present then
 	return
 end
 
-local pydap_present, pydap = pcall(require, "dap-python")
-if not pydap_present then
-	vim.notify("dap-python not found.")
-	return
+local mason_present, mason_dap = pcall(require, "mason=nvim-dap")
+if mason_present then
+	require("mason-nvim-dap").setup({
+		ensure_installed = { "stylua", "jq" },
+		handlers = {
+			-- function(config)
+			-- 	-- all sources with no handler get passed here
+			--
+			-- 	-- Keep original functionality
+			-- 	require("mason-nvim-dap").default_setup(config)
+			-- end,
+			-- python = function(config)
+			-- 	config.adapters = {
+			-- 		type = "executable",
+			-- 		command = "/usr/bin/python3",
+			-- 		args = {
+			-- 			"-m",
+			-- 			"debugpy.adapter",
+			-- 		},
+			-- 	}
+			-- 	require("mason-nvim-dap").default_setup(config) -- don't forget this!
+			-- end,
+		},
+	})
 end
-
-pydap.setup("~/.local/share/virtualenv/debugpy/bin/python")
 
 dapui.setup({
 	expand_lines = true,
@@ -73,23 +91,3 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
 	dapui.close()
 end
--- local test_runners = require('dap-python').test_runners
-
--- `test_runners` is a table. The keys are the runner names like `unittest` or `pytest`.
--- -- The value is a function that takes three arguments:
--- -- The classname, a methodname and the opts
--- -- (The `opts` are coming passed through from either `test_method` or `test_class`)
--- -- The function must return a module name and the arguments passed to the module as list.
--- test_runners.your_runner = function(classname, methodname, opts)
---   local args = {classname, methodname}
---     return 'modulename', args
---     end
-
---
--- local dapbuddy_present, dapbuddy = pcall(require, "dap-buddy")
--- if not dapbuddy_present then
---     vim.notify("dap-buddy not found.")
--- end
---
---
--- dap.setup {}

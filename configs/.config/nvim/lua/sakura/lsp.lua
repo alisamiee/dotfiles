@@ -1,3 +1,16 @@
+local mpresent, mason = pcall(require, "mason")
+if not mpresent then
+    vim.notify("Mason not found.")
+    return
+end
+
+mason.setup({
+    ui = {
+        border = "rounded"
+    }
+})
+
+
 local present, lsp = pcall(require, "lsp-zero")
 if not present then
     vim.notify("lsp-zero was not found.")
@@ -15,8 +28,6 @@ local function lsp_keymaps(bufnr)
     keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
     keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-    keymap(bufnr, "n", "<leader>lI", "<cmd>Mason<cr>", opts)
     keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
     keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
     keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
@@ -25,13 +36,11 @@ local function lsp_keymaps(bufnr)
     keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
-lsp.set_preferences({
-    sign_icons = {
-        error = "",
-        warn = "",
-        hint = "",
-        info = "",
-    }
+lsp.set_sign_icons({
+    error = "",
+    warn = "",
+    hint = "",
+    info = ""
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -71,8 +80,8 @@ null_ls.setup {
     },
 }
 
-local mpresent, mason_null_ls = pcall(require, "mason-null-ls")
-if not mpresent then
+local mnpresent, mason_null_ls = pcall(require, "mason-null-ls")
+if not mnpresent then
     vim.notify("mason-null-ls not found.")
     return
 end
