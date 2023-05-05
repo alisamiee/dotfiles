@@ -23,14 +23,53 @@ local diff = {
 	cond = hide_in_width,
 }
 
+local colors = {
+	base = "#1e1e2e",
+	surface0 = "#313244",
+	surface1 = "#45475a",
+	surface2 = "#585b70",
+	overlay0 = "#6c7086",
+	overlay1 = "#7f849c",
+	overlay2 = "#9399b2",
+	text = "#cdd6f4",
+	blue = "#89b4fa",
+	green = "#a6e3a1",
+	yellow = "#f9e2af",
+	peach = "#fab387",
+	maroon = "#eba0ac",
+	mauve = "#cba6f7",
+}
+
+local neko_theme = {
+	normal = {
+		a = { fg = colors.base, bg = colors.mauve, gui = "bold" },
+		b = { fg = colors.text, bg = colors.surface0 },
+		c = { fg = colors.text, bg = "" },
+	},
+	insert = {
+		a = { fg = colors.base, bg = colors.green, gui = "bold" },
+	},
+	visual = {
+		a = { fg = colors.base, bg = colors.blue, gui = "bold" },
+	},
+	replace = {
+		a = { fg = colors.base, bg = colors.maroon, gui = "bold" },
+	},
+	inactive = {
+		a = { fg = colors.overlay0, bg = colors.base, gui = "bold" },
+		b = { fg = colors.overlay0, bg = colors.base },
+		c = { fg = colors.overlay0, bg = "" },
+	},
+}
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "catppuccin",
-		-- component_separators = { left = "", right = "" },
-		component_separators = { left = "⎜", right = "⎜" },
-		-- section_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		theme = neko_theme,
+		component_separators = "|",
+		-- component_separators = { left = "⎜", right = "⎜" },
+		section_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree" },
 		ignore_focus = {},
 		always_divide_middle = true,
@@ -42,12 +81,16 @@ lualine.setup({
 		},
 	},
 	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch" },
-		lualine_c = { diagnostics },
-		lualine_x = { diff, "encoding", "filetype" },
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_a = {
+			{ "mode", separator = { left = "" } },
+		},
+		lualine_b = { "branch", diff, "filename" },
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = { diagnostics, "progress" },
+		lualine_z = {
+			{ "location", separator = { right = "" } },
+		},
 	},
 	inactive_sections = {
 		lualine_a = {},

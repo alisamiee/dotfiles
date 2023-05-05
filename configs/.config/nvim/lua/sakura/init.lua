@@ -18,6 +18,7 @@ require("sakura.trouble")
 require("sakura.comment")
 require("sakura.harpoon")
 require("sakura.autopairs")
+require("sakura.alpha")
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0

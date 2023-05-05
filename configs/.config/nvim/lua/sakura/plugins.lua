@@ -118,6 +118,8 @@ return packer.startup(function(use)
 	use({ "mbbill/undotree" })
 	use({ "ThePrimeagen/harpoon" })
 	use({ "windwp/nvim-autopairs" })
+    use({ "goolord/alpha-nvim" })
+    use({ "ThePrimeagen/vim-be-good" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
