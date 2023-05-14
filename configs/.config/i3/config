@@ -285,6 +285,8 @@ bindsym $mod+r mode "resize"
 # ---------------------------------------------------------------------------- #
 #                                  Bar config                                  #
 # ---------------------------------------------------------------------------- #
+# add persian keyboard layout
+exec_always --no-startup-id setxkbmap -model pc104 -layout us,ir -option 'grp:alt_shift_toggle'
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -292,15 +294,12 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #                               Gaps and Borders                               #
 # ---------------------------------------------------------------------------- #
 # Removes the tiltle bar of each window.
-default_border pixel 2
+default_border pixel 0
 # A gap around every window.
 gaps inner 5
 gaps top 40
 
 # ---------------------------------------------------------------------------- #
-# exec_always --no-startup-id "setxkbmap -model pc104 -layout us,ir -option 'grp:alt_shift_toggle'"
-exec_always --no-startup-id ~/.config/scripts/kb_layout.sh
-
 # Start picom
 exec --no-startup-id picom -b
 # Set background
@@ -308,7 +307,7 @@ exec --no-startup-id feh --no-fehbg --bg-fill ~/dotfiles/wallpaper/rainbow-cat.p
 # notification manager
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 # Rounded borders
-exec --no-startup-id xborders --disable-version-warning --border-width 2 --border-rgba cba6f7FF &
+exec --no-startup-id xborders --disable-version-warning --border-width 2 --border-rgba cba6f7FF --border-radius 20 &
 # polkit for authentication dialogues 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # use gnome tweaks theme
