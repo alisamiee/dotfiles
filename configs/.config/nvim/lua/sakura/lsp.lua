@@ -56,6 +56,20 @@ end)
 -- (Optional) Configure lua language server for neovim
 require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 
+-- fix clangd offset encoding error
+local cmp_nvim_lsp_present, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if cmp_nvim_lsp_present then
+    require("lspconfig").clangd.setup {
+        on_attach = on_attach,
+        capabilities = cmp_nvim_lsp.default_capabilities(),
+        cmd = {
+            "clangd",
+            "--offset-encoding=utf-16",
+        },
+    }
+end
+
+
 lsp.setup()
 
 local npresent, null_ls = pcall(require, "null-ls")

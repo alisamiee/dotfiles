@@ -7,7 +7,7 @@ end
 local configs = require("nvim-treesitter.configs")
 configs.setup({
 	-- A list of parser names, or "all" (the four listed parsers should always be installed)
-	ensure_installed = { "bash", "lua", "vim", "help", "python" },
+	ensure_installed = { "bash", "lua", "vim", "python" },
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
 	-- Automatically install missing parsers when entering buffer
