@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 rofi \
 	-show emoji \
+    -emoji-mode insert \
 	-modi emoji \
 	-kb-custom-1 Ctrl+c \
+    -emoji-format '{emoji}' \
 	-theme "$HOME"/.config/rofi/config/emoji.rasi
 
 	# -scroll-method 0 \

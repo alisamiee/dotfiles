@@ -2,9 +2,17 @@ configuration {
     display-emoji:                  "🥺";
     disable-history:                false;
     location:                       0;
+
+
+    display-drun: 		            "";
+    display-combi: 		            "";
+    display-window: 		        "▪";
+    drun-display-format:            "{icon} {name}";
+    disable-history:                false;
+    click-to-exit: 		            true;
+    location:                       0;
 }
 
-@import "font.rasi"
 @import "colors.rasi"
 
 window {
@@ -14,7 +22,7 @@ window {
     border:                         2px;
     border-color:                   @BDR;
     border-radius:                  20px;
-    width:                          500px;
+    width:                          300px;
     anchor:                         center;
     x-offset:                       0;
     y-offset:                       0;
@@ -73,12 +81,13 @@ case-indicator {
 
 listview {
     background-color:               @BG;
-    columns:                        1;
-    lines:			                7;
+    columns:                        6;
+    lines:			                8;
     spacing:                        4px;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
+    fixed-columns: true;
 }
 
 mainbox {
@@ -89,14 +98,16 @@ mainbox {
 }
 
 element {
+    children:                       [ element-text ];
     background-color:               @BG;
     text-color:                     @FG;
     orientation:                    horizontal;
     border-radius:                  4px;
-    padding:                        6px 6px 6px 6px;
+    padding:                        2px;
 }
 
 element-icon {
+    enabled:                        false;
     background-color: 	            inherit;
     text-color:       		        inherit;
     horizontal-align:               0.5;
@@ -106,12 +117,12 @@ element-icon {
 }
 
 element-text {
+    font:                           "Twemoji 14";
     background-color: 		        inherit;
     text-color:       		        inherit;
     expand:                         true;
-    horizontal-align:               0;
+    horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         2px 0px 2px 2px;
 }
 
 element normal.urgent,
@@ -123,7 +134,7 @@ element alternate.urgent {
 
 element normal.active,
 element alternate.active {
-    background-color:               @BGa;
+    background-color:               @BGA;
     text-color:                     @FG;
 }
 
