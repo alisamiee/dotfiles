@@ -1,7 +1,7 @@
 configuration {
     show-icons:                     true;
-    display-drun: 		            "";
-    display-combi: 		            "";
+    display-drun: 		            "";
+    display-combi: 		            "";
     display-window: 		        "▪";
     drun-display-format:            "{icon} {name}";
     disable-history:                false;
@@ -79,7 +79,7 @@ case-indicator {
 listview {
     background-color:               @BG;
     columns:                        1;
-    lines:			                7;
+    lines:			                8;
     spacing:                        4px;
     cycle:                          false;
     dynamic:                        true;
@@ -98,7 +98,7 @@ element {
     text-color:                     @FG;
     orientation:                    horizontal;
     border-radius:                  4px;
-    padding:                        6px 6px 6px 6px;
+    padding:                        6px;
 }
 
 element-icon {
