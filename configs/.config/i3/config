@@ -259,6 +259,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # ------------------- Correct handling of floating dialogs ------------------- #
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [class="nekoray"] floating enable
+for_window [class="gnome-calculator"] floating enable
 
 # ---------------------------------------------------------------------------- #
 #                             Resizing containers:                             #
