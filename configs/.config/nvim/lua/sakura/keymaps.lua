@@ -34,8 +34,10 @@ keymap("n", "<leader>Y", [["+Y]])
 -- Delete to void register
 keymap({ "n", "v" }, "<leader>d", [["_d]])
 
+-- Screw Q
 keymap("n", "Q", "<nop>")
 
+-- Replace the word under the cursor in entire buffer
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Better window navigation
@@ -44,8 +46,6 @@ keymap("n", "<C-j>", "<C-w>j")
 keymap("n", "<C-k>", "<C-w>k")
 keymap("n", "<C-l>", "<C-w>l")
 
--- Save buffer
-keymap("n", "<C-s>", "<cmd>w<CR>")
 -- Save as sudo without closing
 keymap("n", "<leader>ss", ":w !sudo tee %")
 
@@ -60,15 +60,8 @@ keymap("v", "<leader>p", [["_dP]])
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 
--- System clipboard in neovide
-if vim.g.neovide then
-	keymap({ "c", "t" }, "<C-S-v>", "<C-R>+")
-	keymap({ "n", "v" }, "<C-S-v>", '"+P')
-	keymap("i", "<C-S-v>", '<ESC>"+pa')
-end
-
 -- Format buffer
-keymap("n", "<leader>fb", vim.lsp.buf.format)
+keymap({ "n", "v" }, "<leader>fo", vim.lsp.buf.format)
 
 -- Make a new tmux session
 keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -79,13 +72,15 @@ keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- keymap("n", "<leader>k", "<cmd>lnext<CR>zz")
 -- keymap("n", "<leader>j", "<cmd>lprev<CR>zz")
 
--- Plugins --
+-------------------------------------------------------------------------------
+----------------------------------- Plugins -----------------------------------
+-------------------------------------------------------------------------------
 
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<CR>")
 keymap("n", "<leader>ft", "<cmd>Telescope live_grep<CR>")
 keymap("n", "<leader>fp", "<cmd>Telescope projects<CR>")
-keymap("n", "<leader>fib", "<cmd>Telescope buffers<CR>")
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 
 -- Vim Fugitive
 keymap("n", "<leader>gs", vim.cmd.Git)
@@ -113,18 +108,14 @@ keymap("v", "<leader>ds", "<ESC>:lua require('dap-python').debug_selection()<CR>
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- Harpoon
-local harpoon_present, _ = pcall(require, "harpoon")
-if harpoon_present then
-	local mark = require("harpoon.mark")
-	local ui = require("harpoon.ui")
+keymap("n", "<leader>mf", "<cmd>silent require('harpoon'):list():append()<cr>")
+keymap("n", "<S-tab>", "<cmd>silent lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<cr>")
 
-	keymap("n", "<leader>mf", mark.add_file)
-	keymap("n", "<S-tab>", ui.toggle_quick_menu)
+-- keymap("n", "<C-h>", "<cmd>silent lua require('harpoon'):list():select(1)<cr>")
+-- keymap("n", "<C-t>", "<cmd>silent lua require('harpoon'):list():select(2)<cr>")
+-- keymap("n", "<C-n>", "<cmd>silent lua require('harpoon'):list():select(3)<cr>")
+-- keymap("n", "<C-s>", "<cmd>silent lua require('harpoon'):list():select(4)<cr>")
 
-	keymap("n", "<A-.>", function()
-		ui.nav_next()
-	end)
-	keymap("n", "<A-,>", function()
-		ui.nav_prev()
-	end)
-end
+keymap("n", "<A-,>", "<cmd>silent lua require('harpoon'):list():prev()<cr>")
+keymap("n", "<A-.>", "<cmd>silent lua require('harpoon'):list():next()<cr>")
+

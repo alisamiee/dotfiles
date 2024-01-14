@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
+		tag = "0.1.5",
 		-- or                            , branch = "0.1.x",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
@@ -107,7 +107,7 @@ return packer.startup(function(use)
 	use({ "rcarriga/nvim-dap-ui" })
 	use({ "jay-babu/mason-nvim-dap.nvim" })
 
-	-- Additional plugins
+    -- Misc
 	use({ "nvim-tree/nvim-web-devicons" })
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "ahmedkhalf/project.nvim" })
@@ -116,7 +116,11 @@ return packer.startup(function(use)
 	use({ "numToStr/Comment.nvim" })
 	use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
 	use({ "mbbill/undotree" })
-	use({ "ThePrimeagen/harpoon" })
+    use({
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { "nvim-lua/plenary.nvim" }
+    })
 	use({ "windwp/nvim-autopairs" })
     use({ "goolord/alpha-nvim" })
     use({ "ThePrimeagen/vim-be-good" })

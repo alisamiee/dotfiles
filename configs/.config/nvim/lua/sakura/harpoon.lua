@@ -5,27 +5,15 @@ if not present then
 end
 
 harpoon.setup({
-    global_settings = {
-        -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
+    settings = {
+        -- any time the ui menu is closed then we will save the state back to the backing list, not to the fs
         save_on_toggle = false,
-        -- saves the harpoon file upon every change. disabling is unrecommended.
-        save_on_change = true,
-        -- sets harpoon to run the command immediately as it's passed to the terminal when calling `sendCommand`.
-        enter_on_sendcmd = false,
-        -- closes any tmux windows harpoon that harpoon creates when you close Neovim.
-        tmux_autoclose_windows = false,
-        -- filetypes that you want to prevent from adding to the harpoon list menu.
-        excluded_filetypes = { "harpoon" },
-        -- set marks specific to each git branch inside git repository
-        mark_branch = false,
-    },
-    -- projects = {
-    --     ["$HOME/personal/vim-with-me/server"] = {
-    --         term = {
-    --             cmds = {
-    --                 "./env && npx ts-node src/index.ts"
-    --             }
-    --         }
-    --     }
-    -- }
+        -- any time the ui menu is closed then the state of the list will be sync'd back to the fs
+        sync_on_ui_close = false,
+        -- how the out list key is looked up.
+        -- this can be useful when using worktrees and using git remote instead of file path 
+        key = function()
+            return vim.loop.cwd()
+        end,
+    }
 })
