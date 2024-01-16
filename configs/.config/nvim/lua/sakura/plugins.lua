@@ -60,18 +60,13 @@ return packer.startup(function(use)
 	-- LSP Support
 	use({
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
+		branch = "v3.x",
 		requires = {
+            { "williamboman/mason.nvim" },
+            { "williamboman/mason-lspconfig.nvim" },
+
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" }, -- Required
-			{
-				-- Optional
-				"williamboman/mason.nvim",
-				run = function()
-					pcall(vim.cmd, "MasonUpdate")
-				end,
-			},
-			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
 			-- Autocompletion
 			{ "hrsh7th/nvim-cmp" }, -- Required
@@ -79,7 +74,7 @@ return packer.startup(function(use)
 			{ "L3MON4D3/LuaSnip" }, -- Required
 		},
 	})
-	use({ "jose-elias-alvarez/null-ls.nvim" })
+	use({ "nvimtools/none-ls.nvim" })
 	use({
 		"jay-babu/mason-null-ls.nvim",
 		-- event = { "BufReadPre", "BufNewFile" },
