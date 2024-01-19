@@ -85,9 +85,6 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 -- Vim Fugitive
 keymap("n", "<leader>gs", vim.cmd.Git)
 
--- Trouble
-keymap("n", "<leader>ts", "<cmd>TroubleToggle quickfix<cr>")
-
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
@@ -106,16 +103,4 @@ keymap("v", "<leader>ds", "<ESC>:lua require('dap-python').debug_selection()<CR>
 
 -- Undotree
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
-
--- Harpoon
-keymap("n", "<leader>mf", "<cmd>silent require('harpoon'):list():append()<cr>")
-keymap("n", "<S-tab>", "<cmd>silent lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<cr>")
-
--- keymap("n", "<C-h>", "<cmd>silent lua require('harpoon'):list():select(1)<cr>")
--- keymap("n", "<C-t>", "<cmd>silent lua require('harpoon'):list():select(2)<cr>")
--- keymap("n", "<C-n>", "<cmd>silent lua require('harpoon'):list():select(3)<cr>")
--- keymap("n", "<C-s>", "<cmd>silent lua require('harpoon'):list():select(4)<cr>")
-
-keymap("n", "<A-,>", "<cmd>silent lua require('harpoon'):list():prev()<cr>")
-keymap("n", "<A-.>", "<cmd>silent lua require('harpoon'):list():next()<cr>")
 

@@ -1,6 +1,6 @@
 return {
-
     "numToStr/Comment.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
         ---Add a space b/w comment and the line
         padding = true,
@@ -44,5 +44,4 @@ return {
         ---Function to call after (un)comment
         post_hook = nil,
     },
-    lazy = false,
 }
