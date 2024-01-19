@@ -86,7 +86,7 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 keymap("n", "<leader>gs", vim.cmd.Git)
 
 -- Trouble
-keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
+keymap("n", "<leader>ts", "<cmd>TroubleToggle quickfix<cr>")
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
