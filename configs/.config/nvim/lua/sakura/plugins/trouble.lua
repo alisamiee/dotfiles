@@ -1,13 +1,42 @@
 return {
-    "folke/trouble.nvim",
-    dependencies = {"nvim-tree/nvim-web-devicons"},
-    opts = {},
-    config = function()
-        vim.keymap.set("n", "<leader>ts", function() require("trouble").toggle() end)
-        -- vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
-        -- vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
-        -- vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
-        -- vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
-        -- vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
-    end
+	"folke/trouble.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	opts = {},
+	keys = {
+		{
+			"<leader>tw",
+			function()
+				require("trouble").toggle("workspace_diagnostics")
+			end,
+			desc = "[Trouble] Workspace diagnostics",
+		},
+		{
+			"<leader>td",
+			function()
+				require("trouble").toggle("document_diagnostics")
+			end,
+			desc = "[Trouble] Document diagnostics",
+		},
+		{
+			"<leader>tq",
+			function()
+				require("trouble").toggle("quickfix")
+			end,
+			desc = "[Trouble] Quickfix",
+		},
+		{
+			"<leader>tl",
+			function()
+				require("trouble").toggle("loclist")
+			end,
+			desc = "[Trouble] Location list",
+		},
+		{
+			"<leader>tr",
+			function()
+				require("trouble").toggle("lsp_references")
+			end,
+			desc = "[Trouble] References",
+		},
+	},
 }

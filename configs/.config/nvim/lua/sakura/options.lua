@@ -1,16 +1,18 @@
 local opt = vim.opt
--- :help options
+
 opt.backup = false                          -- creates a backup file
-opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+opt.writebackup = true                      -- if a file is being edited by another program
+                                            -- (or was written to file while editing with another program),
+                                            -- it is not allowed to be edited
 
 -- opt.clipboard = "unnamedplus"            -- allows neovim to access the system clipboard
-opt.cmdheight = 1                           -- neovim command line height displaying messages
 opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
-opt.conceallevel = 0                        -- so that `` is visible in markdown files
+opt.conceallevel = 0                        -- display `` in markdown files
 opt.fileencoding = "utf-8"                  -- the encoding written to a file
 opt.mouse = "a"                             -- allow the mouse to be used in neovim
 opt.pumheight = 10                          -- pop up menu height
 opt.showtabline = 2                         -- always show tabs
+opt.showmode = false                        -- display the current mode in the status line 
 opt.smartcase = true
 
 opt.splitbelow = true                       -- force all horizontal splits to go below current window
@@ -28,7 +30,7 @@ opt.softtabstop = 4
 opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
 opt.expandtab = true                        -- convert tabs to spaces
 
-opt.smartindent = true                      -- make indenting smarter again
+opt.smartindent = true
 
 opt.number = true                           -- set numbered lines
 opt.relativenumber = true                   -- set relative numbered lines
@@ -48,7 +50,6 @@ opt.incsearch = true
 
 opt.colorcolumn = "80"
 opt.cursorline = true
-
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0

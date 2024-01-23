@@ -2,6 +2,17 @@ return {
     "rcarriga/nvim-dap-ui",
     dependencies = { "jay-babu/mason-nvim-dap.nvim", "mfussenegger/nvim-dap" },
     lazy = true,
+    keys = {
+        { "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>",          desc = "[DAP] Toggle UI" },
+        { "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "[DAP] Breakpoint" },
+        { "<leader>dc", "<cmd>lua require'dap'.continue()<cr>",          desc = "[DAP] Continue" },
+        { "<leader>di", "<cmd>lua require'dap'.step_into()<cr>",         desc = "[DAP] Step into" },
+        { "<leader>do", "<cmd>lua require'dap'.step_over()<cr>",         desc = "[DAP] Step over" },
+        { "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>",          desc = "[DAP] Step out" },
+        { "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>",       desc = "[DAP] Toggle REPL" },
+        { "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>",          desc = "[DAP] Run Last" },
+        { "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>",         desc = "[DAP] Terminate" },
+    },
     config = function()
         local dap = require("dap")
         local dapui = require("dapui")

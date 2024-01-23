@@ -12,7 +12,6 @@ return {
             buftypes = { "terminal", "nofile" },
             filetypes = {
                 "help",
-                "packer",
                 "lazy"
             },
         },

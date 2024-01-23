@@ -14,7 +14,6 @@ return {
         local lsp_zero = require("lsp-zero")
         lsp_zero.extend_cmp()
 
-        -- And you can configure cmp even more, if you want to.
         local cmp = require("cmp")
         local cmp_action = lsp_zero.cmp_action()
 
@@ -70,7 +69,7 @@ return {
                 }),
                 -- Accept currently selected item. If none selected, `select` first item.
                 -- Set `select` to `false` to only confirm explicitly selected items.
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<CR>"] = cmp.mapping.confirm({ select = false }),
                 ["<Tab>"] = nil,
                 ["<S-Tab>"] = nil,
             }),

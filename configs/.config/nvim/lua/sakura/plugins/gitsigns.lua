@@ -3,12 +3,12 @@ return {
     config = function()
         require("gitsigns").setup({
             signs = {
-                add =           { text = "▎" },
-                change =        { text = "▎" },
-                delete =        { text = "_" },
-                topdelete =     { text = "‾" },
-                changedelete =  { text = "~" },
-                untracked =     { text = "┆" },
+                add = { text = "▎" },
+                change = { text = "▎" },
+                delete = { text = "_" },
+                topdelete = { text = "‾" },
+                changedelete = { text = "~" },
+                untracked = { text = "┆" },
             },
             on_attach = function(bufnr)
                 local gs = package.loaded.gitsigns
@@ -28,7 +28,7 @@ return {
                         gs.next_hunk()
                     end)
                     return "<Ignore>"
-                end, { expr = true })
+                end, { expr = true, desc = "[Git] Goto next hunk" })
 
                 keymap("n", "[c", function()
                     if vim.wo.diff then
@@ -38,24 +38,20 @@ return {
                         gs.prev_hunk()
                     end)
                     return "<Ignore>"
-                end, { expr = true })
+                end, { expr = true, desc = "[Git] Goto previous hunk" })
 
                 -- Actions
-                keymap({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>")
-                keymap({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>")
-                keymap("n", "<leader>hS", gs.stage_buffer)
-                keymap("n", "<leader>hu", gs.undo_stage_hunk)
-                keymap("n", "<leader>hR", gs.reset_buffer)
-                keymap("n", "<leader>hp", gs.preview_hunk)
-                keymap("n", "<leader>hb", function()
-                    gs.blame_line({ full = true })
-                end)
-                keymap("n", "<leader>tb", gs.toggle_current_line_blame)
-                keymap("n", "<leader>hd", gs.diffthis)
-                keymap("n", "<leader>hD", function()
-                    gs.diffthis("~")
-                end)
-                keymap("n", "<leader>td", gs.toggle_deleted)
+                keymap({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>", { desc = "[Git] Stage hunk" })
+                keymap({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", { desc = "[Git] Reset hunk" })
+                keymap("n", "<leader>hS", gs.stage_buffer, { desc = "[Git] Stage buffer" })
+                keymap("n", "<leader>hu", gs.undo_stage_hunk, { desc = "[Git] Undo stage buffer" })
+                keymap("n", "<leader>hR", gs.reset_buffer, { desc = "[Git] Reset buffer" })
+                keymap("n", "<leader>hp", gs.preview_hunk, { desc = "[Git] Preview hunk" })
+                keymap("n", "<leader>hb", function() gs.blame_line({ full = true }) end, { desc = "[Git] Full blame" })
+                -- keymap("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "[Git] Toggle blame line" })
+                keymap("n", "<leader>hd", gs.diffthis, { desc = "[Git] Show diff" })
+                -- keymap("n", "<leader>hD", function() gs.diffthis("~") end, { desc = "[Git] Show diff ~" })
+                keymap("n", "<leader>hD", gs.toggle_deleted, { desc = "[Git] Toggle deleted lines" })
 
                 -- Text object
                 keymap({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")

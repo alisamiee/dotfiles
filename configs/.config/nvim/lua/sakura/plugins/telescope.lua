@@ -3,6 +3,12 @@ return {
         "nvim-telescope/telescope.nvim",
         branch = "0.1.x",
         dependencies = { "nvim-lua/plenary.nvim" },
+        keys = {
+            { "<leader>ff", ":Telescope find_files hidden=true<CR>", desc = "[Telescope] Find Files" },
+            { "<leader>ft", ":Telescope live_grep<CR>",              desc = "[Telescope] Grep" },
+            { "<leader>fp", ":Telescope projects<CR>",               desc = "[Telescope] Projects" },
+            { "<leader>fb", ":Telescope buffers<CR>",                desc = "[Telescope] Buffers" },
+        },
         config = function()
             local telescope = require("telescope")
             local actions = require("telescope.actions")
@@ -20,7 +26,6 @@ return {
                             hidden = true,
                         },
                     },
-
                     mappings = {
                         i = {
                             ["<Down>"] = actions.cycle_history_next,

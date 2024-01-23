@@ -1,38 +1,35 @@
 return {
 	"RRethy/vim-illuminate",
+    event = { "BufReadPre", "BufNewFile" },
+    lazy = true,
+    enabled = false,
+    keys = {
+        { "<A-n>", "<cmd>lua require('illuminate').goto_next_reference(wrap)<cr>", noremap = true, desc = "Goto Next Highlighted Word" },
+        { "<A-p>", "<cmd>lua require('illuminate').goto_prev_reference(wrap)<cr>", noremap = true, desc = "Goto Previous Highlighted Word" }
+    },
 	config = function()
-		vim.g.Illuminate_ftblacklist = { "alpha", "NvimTree" }
-		vim.keymap.set("n", "<A-n>", '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>', { noremap = true })
-		vim.keymap.set( "n", "<A-p>", '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>', { noremap = true })
-
 		require("illuminate").configure({
 			providers = {
 				"lsp",
 				"treesitter",
 				"regex",
 			},
-			delay = 200,
+			delay = 100,
 			filetypes_denylist = {
 				"dirvish",
 				"fugitive",
 				"alpha",
-				"NvimTree",
-				"packer",
-				"neogitstatus",
 				"Trouble",
-				"lir",
-				"Outline",
-				"spectre_panel",
-				"toggleterm",
-				"DressingSelect",
 				"TelescopePrompt",
 			},
 			filetypes_allowlist = {},
-			modes_denylist = {},
-			modes_allowlist = {},
+			-- modes_denylist = {},
+            modes_allowlist = { "n" },
 			providers_regex_syntax_denylist = {},
 			providers_regex_syntax_allowlist = {},
 			under_cursor = true,
+            large_file_config = nil,
+            large_file_overrides = nil,
 		})
 	end,
 }

@@ -18,13 +18,6 @@ return {
                 enable = true,
                 -- disable = { "python", "css" }
             },
-            autopairs = {
-                enable = true,
-            },
-            context_commentstring = {
-                enable = true,
-                enable_autocmd = false,
-            },
         })
     end,
 }
