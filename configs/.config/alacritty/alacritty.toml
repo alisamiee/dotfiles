@@ -6,21 +6,12 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 [font]
 size = 12
 
-[font.bold]
-family = "FiraCode Nerd Font"
-style = "Bold"
-
-[font.italic]
-family = "FiraCode Nerd Font"
-style = "Italic"
-
 [font.normal]
-family = "FiraCode Nerd Font"
-style = "Regular"
+family = "JetBrainsMono Nerd Font"
 
 [window]
 dynamic_padding = true
-opacity = 0.9
+opacity = 0.95
 
 [window.padding]
 x = 2
