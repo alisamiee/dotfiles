@@ -59,7 +59,7 @@ entry {
 }
 
 inputbar {
-    children: 			             [textbox-prompt-colon, prompt ];
+    children: 			            [textbox-prompt-colon, prompt ];
     background-color:               @BG;
     text-color:                     @FG;
     expand:                         false;
@@ -81,7 +81,6 @@ case-indicator {
 listview {
     background-color:               @BG;
     columns:                        1;
-    lines:			                4;
     spacing:                        4px;
     cycle:                          true;
     dynamic:                        true;
@@ -129,23 +128,23 @@ element selected {
 
 element.active,
 element.selected.urgent {
-  background-color: @ON;
-  text-color: @BG;
-  border-color: @ON;
-  border-radius: 20px;
+    background-color: @ON;
+    text-color: @BG;
+    border-color: @ON;
+    border-radius: 20px;
 }
 
 element.selected.urgent {
-  border-color: @BDR;
+    border-color: @BDR;
 }
 
 element.urgent,
 element.selected.active {
-  background-color: @OFF;
-  text-color: @BG;
-  border-color: @OFF;
+    background-color: @OFF;
+    text-color: @BG;
+    border-color: @OFF;
 }
 
 element.selected.active {
-  border-color: @BDR;
+    border-color: @BDR;
 }
