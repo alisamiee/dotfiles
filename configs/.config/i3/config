@@ -16,11 +16,11 @@ set $term alacritty
 
 # Application launcher
 # set $menu "rofi -combi-modi window,drun,ssh -font 'hack 10' -show combi"
-set $menu "sh $HOME/.config/rofi/bin/launcher"
-set $emojimenu "sh $HOME/.config/rofi/bin/emoji"
-set $runner "sh $HOME/.config/rofi/bin/runner"
-set $powermenu "sh $HOME/.config/rofi/bin/powermenu"
-set $screenshotmenu "sh $HOME/.config/rofi/bin/screenshot"
+set $menu "exec $HOME/.config/rofi/bin/launcher"
+set $emojimenu "exec $HOME/.config/rofi/bin/emoji"
+set $runner "exec $HOME/.config/rofi/bin/runner"
+set $powermenu "exec $HOME/.config/rofi/bin/powermenu"
+set $screenshotmenu "exec $HOME/.config/rofi/bin/screenshot"
 
 # Colors - Catppuccin Mocha
 set $rosewater #f5e0dc
@@ -297,7 +297,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #                               Gaps and Borders                               #
 # ---------------------------------------------------------------------------- #
 # Removes the tiltle bar of each window.
-default_border pixel 0
+default_border pixel 2
 # A gap around every window.
 gaps inner 5
 gaps top 40
