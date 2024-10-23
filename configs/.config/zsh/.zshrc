@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env zsh
+
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # history gets set by supercharge so no need
@@ -7,7 +8,7 @@
 # SAVEHIST=10000
 
 # personal scripts
-plug "$HOME/.config/zsh/aliases.zsh"
+plug "$HOME/.config/zsh/aliases"
 plug "$HOME/.config/zsh/plugins/highlighting-colors.zsh"
 # plug "$HOME/.config/zsh/plugins/prompt.zsh"
 

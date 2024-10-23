@@ -1,6 +1,7 @@
 typeset -U path PATH
 path=(~/.local/share/cargo/bin ~/.local/bin $path)
-# export PATH
+# export to sub-processes (make it inherited by child processes)
+export PATH
 
 # ------------------------------ XDG Directories ----------------------------- #
 export XDG_CONFIG_HOME="$HOME"/.config
