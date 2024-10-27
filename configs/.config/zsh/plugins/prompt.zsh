@@ -47,10 +47,10 @@ zstyle ':vcs_info:git:*' formats "%F{15}on%{$reset_color%} %F{3}%b%F{4}%F{4}%F{6
 machine="%F{4}%m%{$reset_color%}"
 at="%F{15}at%{$reset_color%}"
 on="on"
-relativeHome="%F{4}%~%{$reset_color%}"
+relativeHome="%B%F{4}%~%{$reset_color%}"
 carriageReturn=""$'\n'""
 emptyLineBottom="%r"
-chevronRight=""
+chevronRight="❯"
 cmdPrompt="%(?:%F{2}${chevronRight} :%F{1}${chevronRight} )"
 git_info="\$vcs_info_msg_0_"
 
@@ -66,7 +66,7 @@ function separator() {
 }
 
 function precmd() {
-  separator
+  # separator
 }
 
 PROMPT="${relativeHome} ${git_info} ${carriageReturn}${cmdPrompt}"

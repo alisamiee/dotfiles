@@ -1,29 +1,24 @@
 #!/usr/bin/env zsh
 
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
-
 # history gets set by supercharge so no need
-# export HISTFILE="$XDG_CONFIG_HOME"/zsh/history
+# export HISTFILE="$ZDOTDIR/history"
 # HISTSIZE=10000
 # SAVEHIST=10000
+export PLUGIN_DIR="$ZDOTDIR/plugins"
 
-# personal scripts
-plug "$HOME/.config/zsh/aliases"
-plug "$HOME/.config/zsh/plugins/highlighting-colors.zsh"
-# plug "$HOME/.config/zsh/plugins/prompt.zsh"
+source "$ZDOTDIR/aliases"
+source "$PLUGIN_DIR/highlighting-colors.zsh"
+source "$PLUGIN_DIR/prompt.zsh"
 
-# plugins
-plug "zsh-users/zsh-autosuggestions"
-plug "hlissner/zsh-autopair"
-plug "zap-zsh/supercharge"
-plug "zap-zsh/vim"
-plug "zap-zsh/fzf"
-plug "zap-zsh/exa"
-plug "zsh-users/zsh-syntax-highlighting"
-plug "zsh-users/zsh-history-substring-search"
+source "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+source "$PLUGIN_DIR/zsh-autopair/zsh-autopair.plugin.zsh"
+source "$PLUGIN_DIR/supercharge/supercharge.plugin.zsh"
+source "$PLUGIN_DIR/vim/vim.plugin.zsh"
+source "$PLUGIN_DIR/fzf/fzf.plugin.zsh"
+source "$PLUGIN_DIR/exa/eza.plugin.zsh"
+source "$PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+source "$PLUGIN_DIR/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 bindkey -s "^F" "tmux-sessionizer\n"
-
-eval "$(starship init zsh)"

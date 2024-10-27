@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-alias sudo="sudo "
-alias please="sudo "
+alias sudo="sudo"
+alias please="sudo"
 alias update="yay -Syyu"
 alias vim="nvim"
 alias lsa="ls -lah"
