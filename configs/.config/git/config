@@ -1,0 +1,27 @@
+[user]
+	name = Ali Samiee
+	email = 99135990+alisamiee@users.noreply.github.com
+[core]
+	autocrlf = input
+	safecrlf = warn
+	editor = code --wait
+	pager = cat
+	diff = less -FX
+[init]
+	defaultBranch = main
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
