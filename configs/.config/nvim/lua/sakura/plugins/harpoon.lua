@@ -6,7 +6,7 @@ return {
         local harpoon = require("harpoon")
         harpoon:setup()
 
-        vim.keymap.set("n", "<leader>mf", function() harpoon:list():append() end, {desc="[Harpoon] Mark File"})
+        vim.keymap.set("n", "<leader>mf", function() harpoon:list():add() end, {desc="[Harpoon] Mark File"})
         vim.keymap.set("n", "<S-tab>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, {desc="[Harpoon] Menu"})
 
         vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end)
