@@ -1,8 +1,11 @@
 [global]
-frame_color = "#89b4fa"
-separator_color= frame
-
 show_indicators = false
+
+# colors
+[global]
+frame_color = "#b4befe"
+highlight = "#b4befe"
+separator_color= frame
 
 [urgency_low]
 background = "#1e1e2e"
