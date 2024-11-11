@@ -1,5 +1,7 @@
 [global]
 show_indicators = false
+icon_theme = "Papirus-Dark"
+enable_recursive_icon_lookup = true
 
 # colors
 [global]
