@@ -279,7 +279,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --image $
 exec --no-startup-id nm-applet
 
 # compositor
-exec --no-startup-id picom --daemon --blur-background --blur-method=dual_kawase --backend=glx --vsync
+exec_always --no-startup-id picom --daemon --blur-background --blur-method=dual_kawase --backend=glx --vsync
 
 # set background
 exec --no-startup-id feh --no-fehbg --bg-fill $wallpaper
