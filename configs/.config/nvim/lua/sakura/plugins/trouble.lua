@@ -2,40 +2,36 @@ return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {},
+    cmd = "Trouble",
 	keys = {
 		{
 			"<leader>tw",
-			function()
-				require("trouble").toggle("workspace_diagnostics")
-			end,
-			desc = "[Trouble] Workspace diagnostics",
+            "<cmd>Trouble diagnostics toggle<cr>",
+			desc = "[Trouble] Diagnostics",
 		},
 		{
-			"<leader>td",
-			function()
-				require("trouble").toggle("document_diagnostics")
-			end,
-			desc = "[Trouble] Document diagnostics",
+			"<leader>tb",
+            "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			desc = "[Trouble] Buffer diagnostics",
+		},
+		{
+			"<leader>ts",
+            "<cmd>Trouble symbols toggle focus=false<cr>",
+			desc = "[Trouble] Symbols",
 		},
 		{
 			"<leader>tq",
-			function()
-				require("trouble").toggle("quickfix")
-			end,
+            "<cmd>Trouble qflist toggle<cr>",
 			desc = "[Trouble] Quickfix",
 		},
 		{
 			"<leader>tl",
-			function()
-				require("trouble").toggle("loclist")
-			end,
+            "<cmd>Trouble loclist toggle<cr>",
 			desc = "[Trouble] Location list",
 		},
 		{
 			"<leader>tr",
-			function()
-				require("trouble").toggle("lsp_references")
-			end,
+            "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
 			desc = "[Trouble] References",
 		},
 	},
