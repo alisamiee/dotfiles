@@ -6,4 +6,4 @@ alias update="yay -Syyu"
 alias vim="nvim"
 alias lsa="ls -lah"
 
-alias ccpp="g++ -ggdb -pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror -std=c++20"
+alias ccpp="g++ -ggdb -pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror -Wshadow -std=c++20"
