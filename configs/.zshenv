@@ -18,4 +18,3 @@ export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 export MANPAGER='nvim +Man!'
-export MANWIDTH=900
