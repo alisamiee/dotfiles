@@ -1,5 +1,5 @@
 typeset -U path PATH
-path=(~/.local/share/cargo/bin ~/.local/bin $path)
+path=(/opt/nvim-linux-x86_64/bin ~/.local/share/cargo/bin ~/.local/bin $path)
 # export to sub-processes (make it inherited by child processes)
 export PATH
 
