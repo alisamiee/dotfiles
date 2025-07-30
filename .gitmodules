@@ -1,0 +1,27 @@
+[submodule "configs/.config/zsh/plugins/nvm"]
+	path = configs/.config/zsh/plugins/nvm
+	url = https://github.com/lukechilds/zsh-nvm.git
+[submodule "configs/.config/zsh/plugins/autosuggestions"]
+	path = configs/.config/zsh/plugins/autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "configs/.config/zsh/plugins/autopair"]
+	path = configs/.config/zsh/plugins/autopair
+	url = https://github.com/hlissner/zsh-autopair.git
+[submodule "configs/.config/zsh/plugins/supercharge"]
+	path = configs/.config/zsh/plugins/supercharge
+	url = https://github.com/zap-zsh/supercharge.git
+[submodule "configs/.config/zsh/plugins/vim"]
+	path = configs/.config/zsh/plugins/vim
+	url = https://github.com/zap-zsh/vim.git
+[submodule "configs/.config/zsh/plugins/fzf"]
+	path = configs/.config/zsh/plugins/fzf
+	url = https://github.com/zap-zsh/fzf.git
+[submodule "configs/.config/zsh/plugins/exa"]
+	path = configs/.config/zsh/plugins/exa
+	url = https://github.com/zap-zsh/exa.git
+[submodule "configs/.config/zsh/plugins/syntax-highlighting"]
+	path = configs/.config/zsh/plugins/syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "configs/.config/zsh/plugins/history-substring-search"]
+	path = configs/.config/zsh/plugins/history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
