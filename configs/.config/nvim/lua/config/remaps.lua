@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 keymap("n", "<leader>e", vim.cmd.Ex, { desc = "Open netrw" })
 
 -- Delete buffer
-keymap("n", "<leader>bd", ":bdelete<cr>", { desc="Delete buffer" })
+keymap("n", "<leader>bd", ":bdelete<cr>", { desc = "Delete buffer" })
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
