@@ -7,7 +7,7 @@
 export PLUGIN_DIR="$ZDOTDIR/plugins"
 
 source "$ZDOTDIR/aliases"
-source "$PLUGIN_DIR/highlighting-colors.zsh"
+source "$PLUGIN_DIR/catppuccin-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 source "$PLUGIN_DIR/prompt.zsh"
 
 source "$PLUGIN_DIR/autosuggestions/zsh-autosuggestions.plugin.zsh"

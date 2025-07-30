@@ -25,3 +25,6 @@
 [submodule "configs/.config/zsh/plugins/history-substring-search"]
 	path = configs/.config/zsh/plugins/history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "configs/.config/zsh/plugins/catppuccin-syntax-highlighting"]
+	path = configs/.config/zsh/plugins/catppuccin-syntax-highlighting
+	url = https://github.com/catppuccin/zsh-syntax-highlighting.git
